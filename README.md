@@ -1,8 +1,14 @@
 # Movie Choice
 ## Table of Contents
+- [Project Overview](#project-overview)
+- [Data Sources](#data-sources)
+- [Tools](#tools)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
 
 ### Project Overview
-The project utilizes one of the main two types of Recommender Systems algorithm, Content-Based, to give recommendations to users on the choice of movies they should watch next, by exploring the similarities of the ones they have watched before.
+The project utilizes one of the main two types of Recommender Systems algorithm - Content-Based - to give recommendations to users on the choice of movies they should watch next, by exploring the similarities of the ones they have watched before.
+
+![plot3](https://github.com/easu978/Recommender_project/assets/151114298/17445294-1858-46a7-897b-d2a48ab6085f)
 
 ### Data Sources
 This project was carried out using two sets of data; "u.data.csv" and "Movie_Id_Titles.csv" files. The former contained the user_id, item_id, rating, and timestamp, while the latter had just two columns - item_id, title.
@@ -39,7 +45,7 @@ plt.savefig('rating.png')
 ```python
 plt.figure(figsize=(9,4))
 sns.set_style('whitegrid')
-ratings['num of ratings'].plot.hist(bins=70)
+ratings['number of ratings'].plot.hist(bins=70)
 plt.xlabel('number of ratings')
 plt.savefig('number of ratings.png')
 ```
