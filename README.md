@@ -4,6 +4,7 @@
 - [Data Sources](#data-sources)
 - [Tools](#tools)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Recommending Similar Movies](#recommending-similar-movies)
 
 ### Project Overview
 The project utilizes one of the main two types of Recommender Systems algorithm - Content-Based - to give recommendations to users on the choice of movies they should watch next, by exploring the similarities of the ones they have watched before.
@@ -52,7 +53,7 @@ plt.savefig('number of ratings.png')
 ![number of ratings](https://github.com/easu978/Recommender_project/assets/151114298/a6d9c0e6-e4f7-468e-9da4-cf6002aa71cc)
 
 
-### Data Analysis
+### Recommending Similar Movies
 
 ### Results/Findings
 
