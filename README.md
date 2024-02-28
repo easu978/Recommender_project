@@ -1,4 +1,4 @@
-# Movie Choice
+# Movie Choice(s)
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Data Sources](#data-sources)
