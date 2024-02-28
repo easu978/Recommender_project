@@ -73,6 +73,10 @@ starwars_user_ratings = movie_matrix['Star Wars (1977)']
 liarliar_user_ratings = movie_matrix['Liar Liar (1997)']
 starwars_user_ratings.head()
 ```
+```python
+similar_to_starwars = movie_matrix.corrwith(starwars_user_ratings)
+similar_to_liarliar = movie_matrix.corrwith(liarliar_user_ratings)
+```
 
 ### Results/Findings
 
