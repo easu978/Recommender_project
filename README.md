@@ -63,7 +63,7 @@ plt.savefig('number of ratings.png')
 
 
 ### Recommending Similar Movies
-Here, a matrix of all the movies was created. The matrix has 'user_id' as its rows; movie title as its columns; and its values came from the rating given to the movie by the users. Also, 10 most rated movies were sampled by exploring the 'number of ratings' column, while sorting values accordingly; and two of the first 5 most rated movies were chosen to build a recommendation system
+Here, a matrix of all the movies was created. The matrix has 'user_id' as its rows; movie title as its columns; and its values came from the rating given to the movie by the users. Also, 10 most rated movies were sampled by exploring the 'number of ratings' column, while sorting values accordingly; and two of the first 5 most rated movies were chosen to build a recommendation system.
 ```python
 movie_matrix = df.pivot_table(index='user_id',columns='title',values='rating')
 movie_matrix.head(11)
