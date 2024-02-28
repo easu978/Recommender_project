@@ -5,6 +5,9 @@
 - [Tools](#tools)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Recommending Similar Movies](#recommending-similar-movies)
+- [Results/Findings](#results/findings)
+- [Recommendations](#recommendations)
+- [References](#references)
 
 ### Project Overview
 The project utilizes one of the main two types of Recommender Systems algorithm - Content-Based - to give recommendations to users on the choice of movies they should watch next, by exploring the similarities of the ones they have watched before.
@@ -13,6 +16,13 @@ The project utilizes one of the main two types of Recommender Systems algorithm 
 
 ### Data Sources
 This project was carried out using two sets of data; "u.data.csv" and "Movie_Id_Titles.csv" files. The former contained the user_id, item_id, rating, and timestamp, while the latter had just two columns - item_id, title.
+```python
+column_names = ['user_id', 'item_id', 'rating', 'timestamp']
+df = pd.read_csv('u.data', sep='\t', names=column_names)
+df.head()
+movie_titles = pd.read_csv("Movie_Id_Titles")
+movie_titles.head()
+```
 
 ### Tools
 The following tools facilitated the execution of this project;
@@ -24,10 +34,6 @@ The following tools facilitated the execution of this project;
 ### Exploratory Data Analysis(EDA)
 The data was explored using Pandas and Seaborn, which gave insights on the most rated movies.
 ```python
-column_names = ['user_id', 'item_id', 'rating', 'timestamp']
-df = pd.read_csv('u.data', sep='\t', names=column_names)
-movie_titles = pd.read_csv("Movie_Id_Titles")
-movie_titles.head()
 df = pd.merge(df,movie_titles,on='item_id')
 df.head()
 ratings = pd.DataFrame(df.groupby('title')['rating'].mean())
@@ -53,7 +59,20 @@ plt.savefig('number of ratings.png')
 ![number of ratings](https://github.com/easu978/Recommender_project/assets/151114298/a6d9c0e6-e4f7-468e-9da4-cf6002aa71cc)
 
 
+
+
 ### Recommending Similar Movies
+Here, a matrix of all the movies was created. The matrix has 'user_id' as its rows; movie title as its columns; and its values came from the rating given to the movie by the users. Also, 10 most rated movies were sampled by exploring the 'number of ratings' column, while sorting values accordingly; and two of the first 5 most rated movies were chosen to build a recommendation system
+```python
+movie_matrix = df.pivot_table(index='user_id',columns='title',values='rating')
+movie_matrix.head(11)
+ratings.sort_values('number of ratings',ascending=False).head(10)
+```
+```python
+starwars_user_ratings = movie_matrix['Star Wars (1977)']
+liarliar_user_ratings = movie_matrix['Liar Liar (1997)']
+starwars_user_ratings.head()
+```
 
 ### Results/Findings
 
