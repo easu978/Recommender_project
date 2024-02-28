@@ -7,6 +7,7 @@
 - [Recommending Similar Movies](#recommending-similar-movies)
 - [Results/Findings](#results/findings)
 - [Recommendations](#recommendations)
+- [Limitations](#limitations)
 - [References](#references)
 
 ### Project Overview
@@ -97,7 +98,20 @@ corr_liarliar = corr_liarliar.join(ratings['num of ratings'])
 corr_liarliar[corr_liarliar['num of ratings']>100].sort_values('Correlation',ascending=False).head()
 ```
 ### Results/Findings
+Based on the choice of two movies - Star Wars (1977) & Liar Liar (1997) - out of the 5 most rated movies, the following recommendations were made:
+- Star Wars (1977) - Empire Strikes Back, The (1980); Return of the Jedi (1983); Raiders of the Lost Ark (1981)
+- Liar Liar (1997) - Batman Forever (1995); Mask, The (1994).
 
 ### Recommendations
+- Feature engineering could be done on the 'user_id' in relation to the 'rating' column, to ascertain if there exist any relationship
+- Other features like, genre of movies be included, so as to broaden the exploration of the data.
+### Limitations
+In the course of exploring the data, the following limitations were observed;
+
+- Most of the movies had no rating, and this resulted to a lot of null values
+- The genre of the movies was not captured in the data; hence that feature could not be explored.
 
 ### References
+- [Udemy](https://udemy.com)
+- [Youtube](https://youtube.com)
+- [Google](https://google.com)
